@@ -1,0 +1,44 @@
+
+
+.floating-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #4f1909,#DAA520);
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: sans-serif;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.floating-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+
+.about-us {
+  background-color: #F2EFEA;
+}
+
+.about-us h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+}
+
+.about-us p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+
+.footer-bottom{
+    text-align: center;
+}
+

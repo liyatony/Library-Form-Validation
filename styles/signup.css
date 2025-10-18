@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/login3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* Container below navbar */
+.form-container {
+  min-height: calc(100vh - 90px); /* Adjust height minus navbar */
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.signup {
+  background-color: rgba(145, 120, 120, 0.6);
+  padding: 30px;
+  border-radius: 8px;
+  width: 350px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgb(232, 224, 240);
+}
+
+#submit {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #16a085;
+}
+
+a {
+  color: #e7eeec;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom{
+    text-align: center;
+    background-color: beige;
+    height: 30px;
+}

@@ -1,0 +1,92 @@
+
+    .footer-bottom{
+      text-align: center;
+      background-color: beige;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .book-card img {
+      height: 300px;
+      object-fit: contain;
+      margin-top: 10px;
+    }
+    
+    .book-card {
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .book-card:hover {
+      transform: scale(1.03);
+    }
+    
+    .book-card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .book-card-footer {
+      margin-top: auto;
+      padding: 15px;
+      text-align: center;
+      background: transparent;
+      border-top: none;
+    }
+    
+    .floating-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #58a359,#DAA520);
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: sans-serif;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      font-size: smaller;
+    }
+    
+    .floating-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      color: white;
+    }
+    
+    body {
+      background-color: #fdfdf6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .footer {
+      background-color: rgb(225, 225, 201);
+    }
+    
+    .footer-bottom {
+      color: #333;
+      font-size: 14px;
+      padding-top: 10px;
+    }
+    
+    .pagination {
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    .page-item.active .page-link {
+      background-color: #58a359;
+      border-color: #58a359;
+    }
+    
+    .page-link {
+      color: #58a359;
+    }
+  

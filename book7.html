@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Tale of Despereaux - Book Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .book-cover {
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+    .card-title {
+      min-height: 3rem;
+    }
+  </style>
+  <link rel="stylesheet" href="styles/bookread.css">
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <img src="images/logo-removebg.png" style="width: 95px;height: 80px;" />
+      <a class="navbar-brand" href="#" style="color: black;margin-left: 30px;">ReadZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" style="color: black;">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Login</a></li>
+          <li class="nav-item"><a class="nav-link active" href="signup.html" style="color: black;">Sign Up</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Books Here" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+ 
+  <div class="container my-5 book-detail-page">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img src="images/books/desp.jpg" alt="The Tale of Despereaux" class="img-fluid rounded shadow-sm book-cover" />
+         <button class="btn btn-availability mt-3">Check Book Availability</button>
+        <button class="btn btn-wishlist mt-2">Add to Wishlist</button>
+      </div>
+      <div class="col-md-8">
+        <h2 class="book-title">The Tale of Despereaux</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <p><strong>Author:</strong> Kate DiCamillo</p>
+        <p><strong>Genre:</strong> Fantasy, Children's Literature, Adventure</p>
+
+        <div class="book-description">
+          <p><strong>Description:</strong></p>
+          <p>This is the story of Despereaux Tilling, a small mouse with big ears and an even bigger heart. Unlike other mice, he falls in love with music, stories, and a princess. His courage leads him on a daring quest to save his beloved from darkness.</p>
+        </div>
+
+        <a href="books.html" class="btn btn-outline-secondary mt-4">← Back to Books</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container my-5">
+    <h3 class="mb-4">You may also like</h3>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p6.jpg" class="card-img-top" alt="Charlotte's Web">
+          <div class="card-body">
+            <h5 class="card-title">Charlotte's Web</h5>
+            <p class="card-text"><strong>Author:</strong> E.B. White</p>
+            <p class="card-text">A pig named Wilbur befriends a spider, Charlotte, who spins words into her web to save him from slaughter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p7.jpg" class="card-img-top" alt="Stuart Little">
+          <div class="card-body">
+            <h5 class="card-title">Stuart Little</h5>
+            <p class="card-text"><strong>Author:</strong> E.B. White</p>
+            <p class="card-text">A clever and adventurous mouse named Stuart sets off on a journey to find his missing friend Margalo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p8.jpg" class="card-img-top" alt="The Mouse and the Motorcycle">
+          <div class="card-body">
+            <h5 class="card-title">The Mouse and the Motorcycle</h5>
+            <p class="card-text"><strong>Author:</strong> Beverly Cleary</p>
+            <p class="card-text">Ralph, a mouse with a passion for adventure, discovers a toy motorcycle that takes him on wild rides.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/b1.jpg" class="card-img-top" alt="Bridge to Terabithia">
+          <div class="card-body">
+            <h5 class="card-title">Bridge to Terabithia</h5>
+            <p class="card-text"><strong>Author:</strong> Katherine Paterson</p>
+            <p class="card-text">Two friends create a magical world in the woods where imagination and friendship rule—until tragedy strikes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+
+
+  <footer class="footer mt-5">
+    <div class="footer-bottom text-center py-3">
+      <p class="mb-0">&copy; 2025 ReadZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

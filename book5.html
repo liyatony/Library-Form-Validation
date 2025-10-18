@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Girl Who Drank the Moon - Book Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bookread.css">
+  <style>
+    .book-cover {
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+    .card h5 {
+      min-height: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+
+   
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <img src="images/logo-removebg.png" style="width: 95px;height: 80px;" />
+      <a class="navbar-brand" href="#" style="color: black;margin-left: 30px;">ReadZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" style="color: black;">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Login</a></li>
+          <li class="nav-item"><a class="nav-link active" href="signup.html" style="color: black;">Sign Up</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Books Here" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container my-5 book-detail-page">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img src="images/books/aoba.jpg" alt="The Girl Who Drank the Moon" class="img-fluid rounded shadow-sm book-cover">
+         <button class="btn btn-availability mt-3">Check Book Availability</button>
+        <button class="btn btn-wishlist mt-2">Add to Wishlist</button>
+      </div>
+      <div class="col-md-8">
+        <h2 class="book-title">The Girl Who Drank the Moon</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <p><strong>Author:</strong> Kelly Barnhill</p>
+        <p><strong>Genre:</strong> Fantasy, Young Adult, Adventure</p>
+
+        <div class="book-description">
+          <p><strong>Description:</strong></p>
+          <p>A young girl named Luna is accidentally fed moonlight instead of starlight and gains magical powers. Raised by a kind witch, a swamp monster, and a tiny dragon, she grows up unaware of her true abilities. As her magic emerges, she must face hidden truths and protect her loved ones.</p>
+        </div>
+
+        <a href="books.html" class="btn btn-outline-secondary mt-4">← Back to Books</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container my-5">
+    <h3 class="mb-4">You may also like</h3>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/i8.jpg" class="card-img-top" alt="Harry Potter and the Sorcerer's Stone">
+          <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Sorcerer's Stone</h5>
+            <p class="card-text"><strong>Author:</strong> J.K. Rowling</p>
+            <p class="card-text">An orphan discovers he is a wizard and attends Hogwarts, where he finds friends, enemies, and the key to his past.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/i9.jpg" class="card-img-top" alt="Eragon">
+          <div class="card-body">
+            <h5 class="card-title">Eragon</h5>
+            <p class="card-text"><strong>Author:</strong> Christopher Paolini</p>
+            <p class="card-text">A farm boy finds a dragon egg and becomes a Dragon Rider, embarking on a journey to battle evil forces in Alagaësia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p1.jpg" class="card-img-top" alt="Coraline">
+          <div class="card-body">
+            <h5 class="card-title">Coraline</h5>
+            <p class="card-text"><strong>Author:</strong> Neil Gaiman</p>
+            <p class="card-text">Coraline discovers a hidden door to a strange world that mirrors her own—except it hides a dark secret.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p2.jpg" class="card-img-top" alt="The Wishing Spell">
+          <div class="card-body">
+            <h5 class="card-title">The Wishing Spell</h5>
+            <p class="card-text"><strong>Author:</strong> Chris Colfer</p>
+            <p class="card-text">Twins Alex and Conner fall into a magical land of fairy tales and must gather items for a spell to return home.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  
+  <footer class="footer mt-5">
+    <div class="footer-bottom text-center py-3">
+      <p class="mb-0">&copy; 2025 ReadZone. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

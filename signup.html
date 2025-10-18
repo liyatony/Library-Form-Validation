@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/signup.css" />
+  <style>
+    .error-message {
+      color: #dc3545;
+      font-size: 12px;
+      display: block;
+      margin-top: 3px;
+    }
+    #password-strength {
+      margin-top: 5px;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      display: none;
+      font-weight: bold;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input.error {
+      border-color: #dc3545;
+    }
+    input.success {
+      border-color: #28a745;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg" style="background-color: rgb(225, 225, 201);">
+    <div class="container-fluid">
+      <img src="images/logo-removebg.png" style="width: 95px;height: 80px;">
+      <a class="navbar-brand ms-3" href="#" style="color: black;">ReadZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" style="color: black;">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Login</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Sign Up</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Books Here"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="d-flex justify-content-center align-items-center form-container">
+    <div class="signup text-white">
+      <form id="signupForm" action="signup.html" method="post">
+        <h2 class="text-center mb-4">Create Account</h2>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Username" required>
+          <span class="error-message" id="username-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <span class="error-message" id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="XXX-XXX-XXXX or XXXXXXXXXX" required>
+          <span class="error-message" id="phone-error"></span>
+          <small style="color: #aaa; font-size: 11px;">Formats: XXXXXXXXXX, XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX</small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+          <div id="password-strength"></div>
+          <span class="error-message" id="password-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+          <span class="error-message" id="confirm-password-error"></span>
+        </div>
+
+        <input type="submit" value="Sign Up" id="submit" class="w-100"><br><br>
+
+        <div class="text-center">
+          <h6>Already have an account?</h6>
+          <a href="login.html">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2025 ReadZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('signupForm');
+        const username = document.getElementById('username');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm_password');
+        
+        const usernameError = document.getElementById('username-error');
+        const emailError = document.getElementById('email-error');
+        const phoneError = document.getElementById('phone-error');
+        const passwordError = document.getElementById('password-error');
+        const confirmPasswordError = document.getElementById('confirm-password-error');
+        const strengthIndicator = document.getElementById('password-strength');
+        
+        // Email validation
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Phone number validation
+        function validatePhone(phoneNum) {
+            // Remove all non-digit characters for validation
+            const digitsOnly = phoneNum.replace(/\D/g, '');
+            
+            // Check if exactly 10 digits
+            if (digitsOnly.length !== 10) {
+                return { isValid: false, message: 'Phone number must contain exactly 10 digits' };
+            }
+            
+            // Check valid formats
+            const formats = [
+                /^\d{10}$/,                    // XXXXXXXXXX
+                /^\d{3}-\d{3}-\d{4}$/,         // XXX-XXX-XXXX
+                /^\d{3}\.\d{3}\.\d{4}$/,       // XXX.XXX.XXXX
+                /^\d{3}\s\d{3}\s\d{4}$/        // XXX XXX XXXX
+            ];
+            
+            const isValidFormat = formats.some(format => format.test(phoneNum));
+            
+            if (!isValidFormat) {
+                return { isValid: false, message: 'Invalid format. Use: XXXXXXXXXX, XXX-XXX-XXXX, XXX.XXX.XXXX, or XXX XXX XXXX' };
+            }
+            
+            return { isValid: true, message: '' };
+        }
+        
+        // Password validation
+        function validatePassword(pass) {
+            const minLength = pass.length >= 8;
+            const hasUpperCase = /[A-Z]/.test(pass);
+            const hasLowerCase = /[a-z]/.test(pass);
+            const hasNumber = /[0-9]/.test(pass);
+            
+            return {
+                isValid: minLength && hasUpperCase && hasLowerCase && hasNumber,
+                minLength,
+                hasUpperCase,
+                hasLowerCase,
+                hasNumber
+            };
+        }
+        
+        // Password strength checker
+        function checkPasswordStrength(pass) {
+            let strength = 0;
+            
+            if (pass.length >= 8) strength++;
+            if (pass.length >= 12) strength++;
+            if (/[a-z]/.test(pass)) strength++;
+            if (/[A-Z]/.test(pass)) strength++;
+            if (/[0-9]/.test(pass)) strength++;
+            if (/[^a-zA-Z0-9]/.test(pass)) strength++;
+            
+            if (strength <= 2) {
+                return { level: 'Poor', color: '#dc3545', bgColor: '#f8d7da' };
+            } else if (strength <= 4) {
+                return { level: 'Medium', color: '#fd7e14', bgColor: '#fff3cd' };
+            } else {
+                return { level: 'Strong', color: '#28a745', bgColor: '#d4edda' };
+            }
+        }
+        
+        // Real-time password validation
+        password.addEventListener('input', function() {
+            const pass = this.value;
+            const validation = validatePassword(pass);
+            
+            if (pass.length === 0) {
+                passwordError.textContent = '';
+                strengthIndicator.style.display = 'none';
+                this.classList.remove('error', 'success');
+                return;
+            }
+            
+            strengthIndicator.style.display = 'block';
+            const strength = checkPasswordStrength(pass);
+            strengthIndicator.textContent = `Password Strength: ${strength.level}`;
+            strengthIndicator.style.backgroundColor = strength.bgColor;
+            strengthIndicator.style.color = strength.color;
+            
+            if (!validation.isValid) {
+                let errors = [];
+                if (!validation.minLength) errors.push('at least 8 characters');
+                if (!validation.hasUpperCase) errors.push('one uppercase letter');
+                if (!validation.hasLowerCase) errors.push('one lowercase letter');
+                if (!validation.hasNumber) errors.push('one number');
+                
+                passwordError.textContent = `Must contain ${errors.join(', ')}`;
+                this.classList.add('error');
+                this.classList.remove('success');
+            } else {
+                passwordError.textContent = '';
+                this.classList.remove('error');
+                this.classList.add('success');
+            }
+        });
+        
+        // Email validation on blur
+        email.addEventListener('blur', function() {
+            if (this.value && !validateEmail(this.value)) {
+                emailError.textContent = 'Please enter a valid email address';
+                this.classList.add('error');
+            } else {
+                emailError.textContent = '';
+                this.classList.remove('error');
+                if (this.value) this.classList.add('success');
+            }
+        });
+        
+        // Phone validation on input
+        phone.addEventListener('input', function() {
+            // Only allow numbers, dots, dashes, and spaces
+            this.value = this.value.replace(/[^\d.\-\s]/g, '');
+            
+            if (this.value.length > 0) {
+                const validation = validatePhone(this.value);
+                if (!validation.isValid) {
+                    phoneError.textContent = validation.message;
+                    this.classList.add('error');
+                    this.classList.remove('success');
+                } else {
+                    phoneError.textContent = '';
+                    this.classList.remove('error');
+                    this.classList.add('success');
+                }
+            } else {
+                phoneError.textContent = '';
+                this.classList.remove('error', 'success');
+            }
+        });
+        
+        // Username validation
+        username.addEventListener('blur', function() {
+            if (this.value.length < 3) {
+                usernameError.textContent = 'Username must be at least 3 characters';
+                this.classList.add('error');
+            } else {
+                usernameError.textContent = '';
+                this.classList.remove('error');
+                this.classList.add('success');
+            }
+        });
+        
+        // Confirm password validation
+        confirmPassword.addEventListener('input', function() {
+            if (this.value !== password.value) {
+                confirmPasswordError.textContent = 'Passwords do not match';
+                this.classList.add('error');
+                this.classList.remove('success');
+            } else {
+                confirmPasswordError.textContent = '';
+                this.classList.remove('error');
+                if (this.value) this.classList.add('success');
+            }
+        });
+        
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Validate username
+            if (username.value.length < 3) {
+                usernameError.textContent = 'Username must be at least 3 characters';
+                username.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate email
+            if (!validateEmail(email.value)) {
+                emailError.textContent = 'Please enter a valid email address';
+                email.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate phone
+            const phoneValidation = validatePhone(phone.value);
+            if (!phoneValidation.isValid) {
+                phoneError.textContent = phoneValidation.message;
+                phone.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate password
+            const passValidation = validatePassword(password.value);
+            if (!passValidation.isValid) {
+                let errors = [];
+                if (!passValidation.minLength) errors.push('at least 8 characters');
+                if (!passValidation.hasUpperCase) errors.push('one uppercase letter');
+                if (!passValidation.hasLowerCase) errors.push('one lowercase letter');
+                if (!passValidation.hasNumber) errors.push('one number');
+                
+                passwordError.textContent = `Must contain ${errors.join(', ')}`;
+                password.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate confirm password
+            if (password.value !== confirmPassword.value) {
+                confirmPasswordError.textContent = 'Passwords do not match';
+                confirmPassword.classList.add('error');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                alert('Account created successfully!');
+                // form.submit(); // Uncomment to actually submit
+            } else {
+                alert('Please fix the errors in the form');
+            }
+        });
+    });
+  </script>
+</body>
+</html>

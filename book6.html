@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harry Potter and the Chamber of Secrets - Book Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/bookread.css">
+  <style>
+    .book-cover {
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+    .card-title {
+      min-height: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <img src="images/logo-removebg.png" style="width: 95px;height: 80px;" />
+      <a class="navbar-brand" href="#" style="color: black;margin-left: 30px;">ReadZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" style="color: black;">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Login</a></li>
+          <li class="nav-item"><a class="nav-link active" href="signup.html" style="color: black;">Sign Up</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Books Here" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+ 
+  <div class="container my-5 book-detail-page">
+    <div class="row">
+      <div class="col-md-4 text-center">
+
+        <img src="images/books/hpc.jpg" alt="Harry Potter and the Chamber of Secrets" class="img-fluid rounded shadow-sm book-cover" />
+         <button class="btn btn-availability mt-3">Check Book Availability</button>
+        <button class="btn btn-wishlist mt-2">Add to Wishlist</button>
+        
+      </div>
+      <div class="col-md-8">
+        <h2 class="book-title">Harry Potter and the Chamber of Secrets</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <p><strong>Author:</strong> J.K. Rowling</p>
+        <p><strong>Genre:</strong> Fantasy, Mystery, Young Adult</p>
+
+        <div class="book-description">
+          <p><strong>Description:</strong></p>
+          <p>In his second year at Hogwarts, Harry returns to find the school plagued by mysterious attacks. He uncovers clues about a hidden chamber and a terrifying secret within the castle. With the help of his friends, Harry confronts danger to save the school and those he cares about.</p>
+        </div>
+
+        <a href="books.html" class="btn btn-outline-secondary mt-4">← Back to Books</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container my-5">
+    <h3 class="mb-4">You may also like</h3>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p3.jpg" class="card-img-top" alt="Harry Potter and the Sorcerer's Stone">
+          <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Sorcerer's Stone</h5>
+            <p class="card-text"><strong>Author:</strong> J.K. Rowling</p>
+            <p class="card-text">Harry discovers he's a wizard and attends Hogwarts, uncovering his destiny and a hidden danger in the castle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p4.jpg" class="card-img-top" alt="Percy Jackson & the Olympians">
+          <div class="card-body">
+            <h5 class="card-title">Percy Jackson & the Olympians</h5>
+            <p class="card-text"><strong>Author:</strong> Rick Riordan</p>
+            <p class="card-text">Percy discovers he's a demigod and embarks on thrilling quests involving Greek gods and ancient prophecies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/i9.jpg" class="card-img-top" alt="Eragon">
+          <div class="card-body">
+            <h5 class="card-title">Eragon</h5>
+            <p class="card-text"><strong>Author:</strong> Christopher Paolini</p>
+            <p class="card-text">A farm boy finds a dragon egg and becomes a Dragon Rider, challenging an evil empire with newfound powers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/p5.jpg" class="card-img-top" alt="The Lion, the Witch and the Wardrobe">
+          <div class="card-body">
+            <h5 class="card-title">The Lion, the Witch and the Wardrobe</h5>
+            <p class="card-text"><strong>Author:</strong> C.S. Lewis</p>
+            <p class="card-text">Four siblings enter a magical world through a wardrobe and help defeat an evil witch to bring peace to Narnia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <footer class="footer mt-5">
+    <div class="footer-bottom text-center py-3">
+      <p class="mb-0">&copy; 2025 ReadZone. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

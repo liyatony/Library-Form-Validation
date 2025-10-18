@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Midnight Library - Book Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .book-cover {
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+    .card-title {
+      min-height: 3rem;
+    }
+  </style>
+  <link rel="stylesheet" href="styles/bookread.css">
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <img src="images/logo-removebg.png" style="width: 95px;height: 80px;" />
+      <a class="navbar-brand" href="#" style="color: black;margin-left: 30px;">ReadZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" style="color: black;">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Login</a></li>
+          <li class="nav-item"><a class="nav-link active" href="signup.html" style="color: black;">Sign Up</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Books Here" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container my-5 book-detail-page">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img src="images/books/ml.jpg" alt="The Midnight Library" class="img-fluid rounded shadow-sm book-cover" />
+         <button class="btn btn-availability mt-3">Check Book Availability</button>
+        <button class="btn btn-wishlist mt-2">Add to Wishlist</button>
+      </div>
+      <div class="col-md-8">
+        <h2 class="book-title">The Midnight Library</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <p><strong>Author:</strong> Matt Haig</p>
+        <p><strong>Genre:</strong> Philosophical Fiction, Fantasy</p>
+
+        <div class="book-description">
+          <p><strong>Description:</strong></p>
+          <p><em>The Midnight Library</em> follows Nora Seed, who finds herself in a mysterious library between life and death. Each book offers a chance to live a different version of her life based on the choices she could have made. The novel explores regret, possibility, and the value of living.</p>
+        </div>
+
+        <a href="books.html" class="btn btn-outline-secondary mt-4">← Back to Books</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container my-5">
+    <h3 class="mb-4">You may also like</h3>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/c1.jpg" class="card-img-top" alt="The Ocean at the End of the Lane">
+          <div class="card-body">
+            <h5 class="card-title">The Ocean at the End of the Lane</h5>
+            <p class="card-text"><strong>Author:</strong> Neil Gaiman</p>
+            <p class="card-text">A man revisits his childhood home and is drawn into a fantastical past where memories and myth intertwine in magical realism.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/c2.jpg" class="card-img-top" alt="Life of Pi">
+          <div class="card-body">
+            <h5 class="card-title">Life of Pi</h5>
+            <p class="card-text"><strong>Author:</strong> Yann Martel</p>
+            <p class="card-text">A spiritual and survival journey of a young boy stranded at sea with a Bengal tiger, blending adventure and deep questions of faith.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/c2.jpg" class="card-img-top" alt="Replay">
+          <div class="card-body">
+            <h5 class="card-title">Replay</h5>
+            <p class="card-text"><strong>Author:</strong> Ken Grimwood</p>
+            <p class="card-text">A man relives his life repeatedly after dying, each time trying different paths in a quest to understand meaning and destiny.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/c4.jpg" class="card-img-top" alt="The Bell Jar">
+          <div class="card-body">
+            <h5 class="card-title">The Bell Jar</h5>
+            <p class="card-text"><strong>Author:</strong> Sylvia Plath</p>
+            <p class="card-text">A haunting semi-autobiographical story of a young woman’s struggle with identity, depression, and society’s expectations.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer mt-5">
+    <div class="footer-bottom text-center py-3">
+      <p class="mb-0">&copy; 2025 ReadZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

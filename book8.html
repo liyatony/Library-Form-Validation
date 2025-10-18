@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To Kill a Mockingbird - Book Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .book-cover {
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+    .card-title {
+      min-height: 3rem;
+    }
+  </style>
+  <link rel="stylesheet" href="styles/bookread.css">
+</head>
+<body>
+
+   
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <img src="images/logo-removebg.png" style="width: 95px;height: 80px;" />
+      <a class="navbar-brand" href="#" style="color: black;margin-left: 30px;">ReadZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" style="color: black;">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html" style="color: black;">Login</a></li>
+          <li class="nav-item"><a class="nav-link active" href="signup.html" style="color: black;">Sign Up</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Books Here" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container my-5 book-detail-page">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img src="images/books/tkmb.jpg" alt="To Kill a Mockingbird" class="img-fluid rounded shadow-sm book-cover" />
+         <button class="btn btn-availability mt-3">Check Book Availability</button>
+        <button class="btn btn-wishlist mt-2">Add to Wishlist</button>
+      </div>
+      <div class="col-md-8">
+        <h2 class="book-title">To Kill a Mockingbird</h2>
+         <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <p><strong>Author:</strong> Harper Lee</p>
+        <p><strong>Genre:</strong> Southern Gothic, Coming-of-Age</p>
+
+        <div class="book-description">
+          <p><strong>Description:</strong></p>
+          <p>Set in the racially charged American South during the 1930s, this novel follows young Scout Finch as her father, Atticus, defends a black man wrongly accused of assault. Through Scout’s eyes, we witness powerful lessons on morality, justice, and empathy. It’s a timeless exploration of conscience and human dignity.</p>
+        </div>
+
+        <a href="books.html" class="btn btn-outline-secondary mt-4">← Back to Books</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container my-5">
+    <h3 class="mb-4">You may also like</h3>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/b2.jpg" class="card-img-top" alt="The Great Gatsby">
+          <div class="card-body">
+            <h5 class="card-title">The Great Gatsby</h5>
+            <p class="card-text"><strong>Author:</strong> F. Scott Fitzgerald</p>
+            <p class="card-text">A tragic tale of wealth, illusion, and the American Dream set in the Jazz Age, told through the eyes of Nick Carraway.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/b3.jpg" class="card-img-top" alt="The Catcher in the Rye">
+          <div class="card-body">
+            <h5 class="card-title">The Catcher in the Rye</h5>
+           
+            <p class="card-text"><strong>Author:</strong> J.D. Salinger</p>
+            <p class="card-text">Follow Holden Caulfield, a disillusioned teen wandering New York City in search of truth, identity, and human connection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/b4.jpg" class="card-img-top" alt="Go Set a Watchman">
+          <div class="card-body">
+            <h5 class="card-title">Go Set a Watchman</h5>
+            <p class="card-text"><strong>Author:</strong> Harper Lee</p>
+            <p class="card-text">A companion to *To Kill a Mockingbird*, this novel explores Scout’s return to her hometown and the changing face of justice.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/books/b5.jpg" class="card-img-top" alt="Of Mice and Men">
+          <div class="card-body">
+            <h5 class="card-title">Of Mice and Men</h5>
+            <p class="card-text"><strong>Author:</strong> John Steinbeck</p>
+            <p class="card-text">Two displaced ranch workers in the Great Depression pursue their dream of owning land—until fate tragically intervenes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <footer class="footer mt-5">
+    <div class="footer-bottom text-center py-3">
+      <p class="mb-0">&copy; 2025 ReadZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
