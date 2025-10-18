@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-   <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <style>
+        .error-message {
+            color: #dc3545;
+            font-size: 12px;
+            display: block;
+            margin-top: 3px;
+        }
+        input.error {
+            border-color: #dc3545;
+        }
+        input.success {
+            border-color: #28a745;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,14 +57,20 @@
     </nav>
 
     <section class="login">
-        <form action="books.html" method="post">
+        <form id="loginForm">
             <h2 class="text-center">User Login</h2>
             
-            <label for="username">Username</label>
-            <input type="text" name="username" placeholder="Username" required>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <span class="error-message" id="username-error"></span>
+            </div>
             
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" required>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <span class="error-message" id="password-error"></span>
+            </div>
             
             <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
             
@@ -66,5 +89,130 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            const usernameError = document.getElementById('username-error');
+            const passwordError = document.getElementById('password-error');
+            
+            // Username/Email validation
+            function validateUsernameOrEmail(value) {
+                if (value.length < 3) {
+                    return { isValid: false, message: 'Username must be at least 3 characters' };
+                }
+                
+                // If it looks like an email, validate as email
+                if (value.includes('@')) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        return { isValid: false, message: 'Please enter a valid email address' };
+                    }
+                }
+                
+                return { isValid: true, message: '' };
+            }
+            
+            // Password validation
+            function validatePassword(pass) {
+                if (pass.length === 0) {
+                    return { isValid: false, message: 'Password is required' };
+                }
+                
+                if (pass.length < 8) {
+                    return { isValid: false, message: 'Password must be at least 8 characters' };
+                }
+                
+                return { isValid: true, message: '' };
+            }
+            
+            // Real-time validation
+            username.addEventListener('blur', function() {
+                if (this.value) {
+                    const validation = validateUsernameOrEmail(this.value);
+                    usernameError.textContent = validation.message;
+                    if (!validation.isValid) {
+                        this.classList.add('error');
+                        this.classList.remove('success');
+                    } else {
+                        this.classList.remove('error');
+                        this.classList.add('success');
+                    }
+                }
+            });
+            
+            password.addEventListener('blur', function() {
+                if (this.value) {
+                    const validation = validatePassword(this.value);
+                    passwordError.textContent = validation.message;
+                    if (!validation.isValid) {
+                        this.classList.add('error');
+                        this.classList.remove('success');
+                    } else {
+                        this.classList.remove('error');
+                        this.classList.add('success');
+                    }
+                }
+            });
+            
+            // Clear errors on input
+            username.addEventListener('input', function() {
+                if (usernameError.textContent && this.value.length >= 3) {
+                    usernameError.textContent = '';
+                    this.classList.remove('error');
+                }
+            });
+            
+            password.addEventListener('input', function() {
+                if (passwordError.textContent && this.value.length >= 8) {
+                    passwordError.textContent = '';
+                    this.classList.remove('error');
+                }
+            });
+            
+            // Form submission - NO POST REQUEST
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+                
+                let isValid = true;
+                
+                // Validate username/email
+                const usernameValidation = validateUsernameOrEmail(username.value);
+                if (!usernameValidation.isValid) {
+                    usernameError.textContent = usernameValidation.message;
+                    username.classList.add('error');
+                    isValid = false;
+                } else {
+                    usernameError.textContent = '';
+                    username.classList.remove('error');
+                }
+                
+                // Validate password
+                const passwordValidation = validatePassword(password.value);
+                if (!passwordValidation.isValid) {
+                    passwordError.textContent = passwordValidation.message;
+                    password.classList.add('error');
+                    isValid = false;
+                } else {
+                    passwordError.textContent = '';
+                    password.classList.remove('error');
+                }
+                
+                if (isValid) {
+                    // Store login state in sessionStorage (optional)
+                    sessionStorage.setItem('isLoggedIn', 'true');
+                    sessionStorage.setItem('username', username.value);
+                    
+                    // Redirect to books page using JavaScript
+                    window.location.href = 'books.html';
+                } else {
+                    // Show error message
+                    alert('Please fix the errors in the form');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
